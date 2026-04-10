@@ -34,7 +34,7 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
 .topnav-links .btn-start:hover { background:var(--gold-light); }
 
 /* HERO */
-.hero { min-height:100vh; background:linear-gradient(135deg,#0C1B33 0%,#1a3a5c 40%,#2d5a8e 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:80px 2rem 2rem; position:relative; overflow:hidden; }
+.hero { min-height:100vh; background:linear-gradient(135deg,#0C1B33 0%,#1a3a5c 40%,#2d5a8e 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem; position:relative; overflow:hidden; }
 .hero::before { content:''; position:absolute; width:400px; height:400px; background:radial-gradient(circle,rgba(212,160,18,0.12),transparent 70%); top:-100px; right:-100px; border-radius:50%; }
 .hero::after { content:''; position:absolute; width:300px; height:300px; background:radial-gradient(circle,rgba(41,128,185,0.15),transparent 70%); bottom:-80px; left:-80px; border-radius:50%; }
 .hero-content { position:relative; z-index:2; max-width:700px; }
@@ -116,24 +116,13 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
 <body>
 
 <!-- TOP NAV -->
-<nav class="topnav">
-  <div class="topnav-logo">
-    <span>🏆</span> Olympic Tiếng Việt - Toán Tuổi Thơ
-  </div>
-  <div class="topnav-links">
-    <a href="#features">Tính năng</a>
-    <a href="#steps">Hướng dẫn</a>
-    <a href="#faq">Hỏi đáp</a>
-    <a href="https://olympictvtoan.github.io/tuluyen/" style="color:#F5C518;">🐝 Tự luyện</a>
-    <a href="https://hososoeduvn.github.io/olympictieuhoc/" class="btn-start">🚀 Vào hệ thống</a>
-  </div>
-</nav>
+<!-- Nav removed -->
 
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-content">
     <div class="hero-badge">🏆 Cấp tiểu học năm 2026</div>
-    <h1>Hệ thống tổ chức thi<br><em>Olympic trực tuyến</em></h1>
+    <h1>Hệ thống trải nghiệm thi<br><em>Olympic trực tuyến</em></h1>
     <p>Hệ thống tổ chức Giao lưu Olympic Tiếng Việt – Toán Tuổi Thơ cấp trường trực tuyến. Tạo đề tự động / thủ công, chấm điểm tức thì, chống gian lận hiệu quả.</p>
     <div class="hero-buttons">
       <a href="#steps" class="btn-hero btn-hero-primary">📖 Xem hướng dẫn</a>
@@ -141,7 +130,7 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
       <a href="https://olympictvtoan.github.io/tuluyen/" class="btn-hero btn-hero-outline" style="border-color:rgba(212,160,18,0.5);color:#F5C518;">🐝 Học sinh tự luyện</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="num">400+</div><div class="lbl">Câu hỏi</div></div>
+      <div class="hero-stat"><div class="num">676</div><div class="lbl">Câu hỏi</div></div>
       <div class="hero-stat"><div class="num">3</div><div class="lbl">Mức độ</div></div>
       <div class="hero-stat"><div class="num">2</div><div class="lbl">Môn thi</div></div>
     </div>
@@ -159,7 +148,7 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
     <div class="feature-card">
       <div class="feature-icon" style="background:#EBF5FB;">🎲</div>
       <h3>Tạo đề tự động</h3>
-      <p>Rút ngẫu nhiên 15 câu từ ngân hàng 400+ câu. Mỗi lần bấm = 1 đề khác nhau. Ma trận 3 mức: Nhận biết, Thông hiểu, Vận dụng.</p>
+      <p>Rút ngẫu nhiên 15 câu từ ngân hàng 676 câu. Mỗi lần bấm = 1 đề khác nhau. Ma trận 3 mức: Nhận biết, Thông hiểu, Vận dụng.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon" style="background:#EAFAF1;">⚡</div>
@@ -260,7 +249,7 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
         <h3>Tạo đề thi tự động</h3>
         <p>
           Vào tab <strong>"Soạn đề"</strong> → bấm <strong>"🐝 Tạo đề Toán (15 câu)"</strong>.<br><br>
-          Hệ thống rút ngẫu nhiên 15 câu từ ngân hàng 400+ câu, theo đúng ma trận 3 mức.<br><br>
+          Hệ thống rút ngẫu nhiên 15 câu từ ngân hàng 676 câu, theo đúng ma trận 3 mức.<br><br>
           Tạo xong Toán → bấm tiếp <strong>"🐝 Tạo đề TV (15 câu)"</strong>.<br><br>
           Bấm <strong>"👁️ Xem trước đề"</strong> để kiểm tra. Có tab chuyển đổi giữa Toán và Tiếng Việt.
         </p>
@@ -436,7 +425,7 @@ body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:va
     <div style="flex:0 0 240px;text-align:center;">
       <div style="background:rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;">
         <div style="font-size:2.5rem;margin-bottom:0.5rem;">🐝</div>
-        <div style="color:white;font-weight:700;margin-bottom:0.5rem;">400+ câu hỏi</div>
+        <div style="color:white;font-weight:700;margin-bottom:0.5rem;">676 câu hỏi</div>
         <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">Toán + Tiếng Việt</div>
         <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;">Vòng thi không giới hạn</div>
         <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;">≥ 50 điểm → lên vòng mới</div>
