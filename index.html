@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hướng dẫn sử dụng | Olympic Tiếng Việt - Toán Tuổi Thơ 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏆</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0C1B33;
+  --blue: #2980B9;
+  --gold: #D4A012;
+  --gold-light: #F5C518;
+  --success: #27AE60;
+  --danger: #E74C3C;
+  --bg: #F7F9FC;
+  --card: #FFFFFF;
+  --text: #2D3748;
+  --text-light: #718096;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Be Vietnam Pro',sans-serif; color:var(--text); background:var(--bg); }
+
+/* NAV */
+.topnav { position:fixed; top:0; width:100%; background:rgba(12,27,51,0.95); backdrop-filter:blur(10px); z-index:100; padding:0 2rem; display:flex; align-items:center; justify-content:space-between; height:60px; }
+.topnav-logo { display:flex; align-items:center; gap:10px; color:white; font-weight:700; font-size:1rem; }
+.topnav-logo span { font-size:1.4rem; }
+.topnav-links { display:flex; gap:6px; }
+.topnav-links a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.85rem; padding:8px 14px; border-radius:8px; transition:all 0.2s; font-weight:500; }
+.topnav-links a:hover { background:rgba(255,255,255,0.1); color:white; }
+.topnav-links .btn-start { background:var(--gold); color:var(--navy); font-weight:700; }
+.topnav-links .btn-start:hover { background:var(--gold-light); }
+
+/* HERO */
+.hero { min-height:100vh; background:linear-gradient(135deg,#0C1B33 0%,#1a3a5c 40%,#2d5a8e 100%); display:flex; align-items:center; justify-content:center; text-align:center; padding:80px 2rem 2rem; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; width:400px; height:400px; background:radial-gradient(circle,rgba(212,160,18,0.12),transparent 70%); top:-100px; right:-100px; border-radius:50%; }
+.hero::after { content:''; position:absolute; width:300px; height:300px; background:radial-gradient(circle,rgba(41,128,185,0.15),transparent 70%); bottom:-80px; left:-80px; border-radius:50%; }
+.hero-content { position:relative; z-index:2; max-width:700px; }
+.hero-badge { display:inline-block; background:rgba(212,160,18,0.2); color:var(--gold-light); padding:6px 16px; border-radius:20px; font-size:0.82rem; font-weight:600; margin-bottom:1.5rem; border:1px solid rgba(212,160,18,0.3); }
+.hero h1 { font-size:2.8rem; font-weight:900; color:white; line-height:1.2; margin-bottom:1rem; }
+.hero h1 em { font-style:normal; color:var(--gold-light); }
+.hero p { font-size:1.1rem; color:rgba(255,255,255,0.75); line-height:1.7; margin-bottom:2rem; }
+.hero-buttons { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn-hero { padding:14px 28px; border-radius:10px; font-weight:700; font-size:0.95rem; text-decoration:none; transition:all 0.2s; border:none; cursor:pointer; font-family:inherit; display:inline-flex; align-items:center; gap:8px; }
+.btn-hero-primary { background:var(--gold); color:var(--navy); box-shadow:0 4px 16px rgba(212,160,18,0.3); }
+.btn-hero-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(212,160,18,0.4); }
+.btn-hero-outline { background:transparent; color:white; border:2px solid rgba(255,255,255,0.3); }
+.btn-hero-outline:hover { border-color:white; background:rgba(255,255,255,0.1); }
+.hero-stats { display:flex; gap:2rem; justify-content:center; margin-top:2.5rem; }
+.hero-stat { text-align:center; }
+.hero-stat .num { font-size:2rem; font-weight:900; color:var(--gold-light); }
+.hero-stat .lbl { font-size:0.78rem; color:rgba(255,255,255,0.6); margin-top:2px; }
+
+/* SECTIONS */
+.section { padding:5rem 2rem; max-width:1100px; margin:0 auto; }
+.section-title { text-align:center; margin-bottom:3rem; }
+.section-title h2 { font-size:2rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; }
+.section-title p { font-size:1rem; color:var(--text-light); max-width:600px; margin:0 auto; }
+.section-tag { display:inline-block; background:#EBF5FB; color:var(--blue); padding:4px 14px; border-radius:20px; font-size:0.78rem; font-weight:700; margin-bottom:0.75rem; text-transform:uppercase; letter-spacing:1px; }
+
+/* FEATURES */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.feature-card { background:white; border-radius:16px; padding:2rem; box-shadow:0 2px 12px rgba(0,0,0,0.04); border:1px solid #EDF2F7; transition:all 0.3s; text-align:center; }
+.feature-card:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(0,0,0,0.08); border-color:var(--gold); }
+.feature-icon { width:56px; height:56px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin:0 auto 1rem; }
+.feature-card h3 { font-size:1.05rem; font-weight:700; color:var(--navy); margin-bottom:0.5rem; }
+.feature-card p { font-size:0.85rem; color:var(--text-light); line-height:1.6; }
+
+/* STEPS */
+.step { display:flex; gap:3rem; align-items:center; margin-bottom:4rem; }
+.step:nth-child(even) { flex-direction:row-reverse; }
+.step-visual { flex:1; min-width:0; }
+.step-content { flex:1; min-width:0; }
+.step-number { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg,var(--gold),var(--gold-light)); display:flex; align-items:center; justify-content:center; font-size:1.3rem; font-weight:900; color:var(--navy); margin-bottom:1rem; box-shadow:0 4px 12px rgba(212,160,18,0.3); }
+.step-content h3 { font-size:1.4rem; font-weight:800; color:var(--navy); margin-bottom:0.75rem; }
+.step-content p { font-size:0.92rem; color:var(--text-light); line-height:1.8; }
+.step-content .tip { background:#FFF8E1; padding:10px 14px; border-radius:8px; font-size:0.85rem; color:#E65100; margin-top:1rem; border-left:3px solid var(--gold); }
+
+/* Mock screens */
+.mock-screen { background:white; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.1); overflow:hidden; border:1px solid #E2E8F0; }
+.mock-toolbar { background:var(--navy); padding:8px 12px; display:flex; gap:6px; align-items:center; }
+.mock-dot { width:10px; height:10px; border-radius:50%; }
+.mock-body { padding:1.5rem; }
+
+/* FAQ */
+.faq-item { background:white; border-radius:12px; padding:0; margin-bottom:8px; border:1px solid #EDF2F7; overflow:hidden; }
+.faq-q { padding:16px 20px; cursor:pointer; font-weight:700; color:var(--navy); display:flex; justify-content:space-between; align-items:center; font-size:0.95rem; transition:background 0.2s; }
+.faq-q:hover { background:#F7FAFC; }
+.faq-a { padding:0 20px 16px; font-size:0.88rem; color:var(--text-light); line-height:1.7; display:none; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .faq-q { color:var(--blue); }
+.faq-arrow { transition:transform 0.2s; font-size:0.8rem; }
+.faq-item.open .faq-arrow { transform:rotate(180deg); }
+
+/* CTA */
+.cta { background:linear-gradient(135deg,var(--navy),#1a3a5c); border-radius:20px; padding:3rem; text-align:center; color:white; margin:3rem auto; max-width:800px; position:relative; overflow:hidden; }
+.cta::before { content:''; position:absolute; width:200px; height:200px; background:radial-gradient(circle,rgba(212,160,18,0.15),transparent); top:-60px; right:-60px; border-radius:50%; }
+.cta h2 { font-size:1.8rem; font-weight:800; margin-bottom:0.5rem; }
+.cta p { opacity:0.75; margin-bottom:1.5rem; }
+
+/* FOOTER */
+.footer { text-align:center; padding:2rem; font-size:0.8rem; color:var(--text-light); }
+
+@media(max-width:768px) {
+  .hero h1 { font-size:1.8rem; }
+  .features-grid { grid-template-columns:1fr; }
+  .step { flex-direction:column !important; gap:1.5rem; }
+  .hero-stats { gap:1rem; }
+  .topnav-links a span { display:none; }
+  .section { padding:3rem 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <div class="topnav-logo">
+    <span>🏆</span> Olympic Tiếng Việt - Toán Tuổi Thơ
+  </div>
+  <div class="topnav-links">
+    <a href="#features">Tính năng</a>
+    <a href="#steps">Hướng dẫn</a>
+    <a href="#faq">Hỏi đáp</a>
+    <a href="https://olympictvtoan.github.io/tuluyen/" style="color:#F5C518;">🐝 Tự luyện</a>
+    <a href="https://hososoeduvn.github.io/olympictieuhoc/" class="btn-start">🚀 Vào hệ thống</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🏆 Cấp tiểu học năm 2026</div>
+    <h1>Hệ thống tổ chức thi<br><em>Olympic trực tuyến</em></h1>
+    <p>Hệ thống tổ chức Giao lưu Olympic Tiếng Việt – Toán Tuổi Thơ cấp trường trực tuyến. Tạo đề tự động / thủ công, chấm điểm tức thì, chống gian lận hiệu quả.</p>
+    <div class="hero-buttons">
+      <a href="#steps" class="btn-hero btn-hero-primary">📖 Xem hướng dẫn</a>
+      <a href="https://hososoeduvn.github.io/olympictieuhoc/" class="btn-hero btn-hero-outline">🚀 Bắt đầu ngay</a>
+      <a href="https://olympictvtoan.github.io/tuluyen/" class="btn-hero btn-hero-outline" style="border-color:rgba(212,160,18,0.5);color:#F5C518;">🐝 Học sinh tự luyện</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">400+</div><div class="lbl">Câu hỏi</div></div>
+      <div class="hero-stat"><div class="num">3</div><div class="lbl">Mức độ</div></div>
+      <div class="hero-stat"><div class="num">2</div><div class="lbl">Môn thi</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-title">
+    <div class="section-tag">Tính năng nổi bật</div>
+    <h2>Tại sao chọn hệ thống này?</h2>
+    <p>Mọi thứ bạn cần để tổ chức kỳ thi Olympic chuyên nghiệp</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#EBF5FB;">🎲</div>
+      <h3>Tạo đề tự động</h3>
+      <p>Rút ngẫu nhiên 15 câu từ ngân hàng 400+ câu. Mỗi lần bấm = 1 đề khác nhau. Ma trận 3 mức: Nhận biết, Thông hiểu, Vận dụng.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#EAFAF1;">⚡</div>
+      <h3>Chấm điểm tức thì</h3>
+      <p>Học sinh nộp bài → điểm hiện ngay. Hỗ trợ trắc nghiệm, đúng/sai, và điền đáp số. Giáo viên xem kết quả realtime.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FEF9E7;">🛡️</div>
+      <h3>Chống gian lận</h3>
+      <p>Khóa thiết bị 1 SBD = 1 máy. Chuyển tab = nộp bài ngay. Xáo trộn câu hỏi + đáp án cho mỗi HS.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#FDEDEC;">🔀</div>
+      <h3>Xáo trộn đề</h3>
+      <p>Mỗi học sinh nhận thứ tự câu hỏi và đáp án khác nhau. Không thể nhìn bài bạn bên cạnh.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#F3E5F5;">📐</div>
+      <h3>Hình học có hình vẽ</h3>
+      <p>Nhiều bài toán hình học có hình vẽ SVG trực tiếp trên màn hình. Đề thi sinh động, trực quan như trên giấy.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#E0F7FA;">📊</div>
+      <h3>Xuất Excel & In ấn</h3>
+      <p>Xuất kết quả thi, danh sách thí sinh ra Excel. Xem trước đề có tab Toán/TV riêng. In phiếu kết quả.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="section" id="steps" style="background:white;max-width:100%;padding-left:0;padding-right:0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+    <div class="section-title">
+      <div class="section-tag">Hướng dẫn từng bước</div>
+      <h2>Chỉ 3 bước để tổ chức kỳ thi</h2>
+      <p>Đơn giản, nhanh chóng, hiệu quả</p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="step">
+      <div class="step-visual">
+        <div class="mock-screen">
+          <div class="mock-toolbar"><div class="mock-dot" style="background:#E74C3C;"></div><div class="mock-dot" style="background:#F39C12;"></div><div class="mock-dot" style="background:#27AE60;"></div></div>
+          <div class="mock-body">
+            <div style="text-align:center;padding:1rem;">
+              <div style="font-size:1.5rem;margin-bottom:0.5rem;">👥</div>
+              <div style="font-weight:700;color:var(--navy);margin-bottom:1rem;">Danh sách thí sinh</div>
+              <div style="display:flex;gap:8px;justify-content:center;margin-bottom:1rem;">
+                <div style="background:#EBF5FB;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;color:var(--blue);">📥 Tải mẫu Excel</div>
+                <div style="background:#EAFAF1;padding:6px 12px;border-radius:6px;font-size:0.8rem;font-weight:600;color:var(--success);">📤 Upload file</div>
+              </div>
+              <table style="width:100%;font-size:0.75rem;border-collapse:collapse;">
+                <tr style="background:var(--navy);color:white;"><th style="padding:6px;">STT</th><th style="padding:6px;">Họ tên</th><th style="padding:6px;">Lớp</th><th style="padding:6px;">SBD</th></tr>
+                <tr style="background:#F7FAFC;"><td style="padding:5px;">1</td><td style="padding:5px;">Nguyễn Văn An</td><td style="padding:5px;">5A</td><td style="padding:5px;font-weight:700;">HS001</td></tr>
+                <tr><td style="padding:5px;">2</td><td style="padding:5px;">Trần Thị Bình</td><td style="padding:5px;">5A</td><td style="padding:5px;font-weight:700;">HS002</td></tr>
+                <tr style="background:#F7FAFC;"><td style="padding:5px;">3</td><td style="padding:5px;">Lê Hoàng Châu</td><td style="padding:5px;">5B</td><td style="padding:5px;font-weight:700;">HS003</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-content">
+        <div class="step-number">1</div>
+        <h3>Nhập danh sách thí sinh</h3>
+        <p>
+          Vào tab <strong>"Thí sinh"</strong> trên hệ thống Giáo viên.<br><br>
+          <strong>Cách 1:</strong> Nhập tay từng em — nhập tên, ngày sinh, lớp. SBD tự động tạo.<br><br>
+          <strong>Cách 2 (nhanh hơn):</strong> Bấm <strong>"📥 Tải file mẫu"</strong> → mở Excel → điền thông tin → bấm <strong>"📤 Tải danh sách lên"</strong>.
+        </p>
+        <div class="tip">💡 File Excel mẫu có 3 dòng ví dụ (in nghiêng). Xóa chúng trước khi nhập dữ liệu thật.</div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="step">
+      <div class="step-visual">
+        <div class="mock-screen">
+          <div class="mock-toolbar"><div class="mock-dot" style="background:#E74C3C;"></div><div class="mock-dot" style="background:#F39C12;"></div><div class="mock-dot" style="background:#27AE60;"></div></div>
+          <div class="mock-body" style="text-align:center;padding:1.5rem;">
+            <div style="font-size:1.5rem;margin-bottom:0.5rem;">✏️</div>
+            <div style="font-weight:700;color:var(--navy);margin-bottom:1rem;">Soạn đề thi</div>
+            <div style="display:flex;gap:8px;justify-content:center;margin-bottom:1rem;">
+              <div style="background:linear-gradient(135deg,#D4A012,#F5C518);padding:10px 16px;border-radius:8px;color:white;font-weight:700;font-size:0.85rem;">🐝 Tạo đề Toán (15 câu)</div>
+              <div style="background:linear-gradient(135deg,#2980B9,#5DADE2);padding:10px 16px;border-radius:8px;color:white;font-weight:700;font-size:0.85rem;">🐝 Tạo đề TV (15 câu)</div>
+            </div>
+            <div style="background:#F7FAFC;padding:12px;border-radius:8px;font-size:0.78rem;text-align:left;">
+              <div style="font-weight:700;color:var(--navy);margin-bottom:6px;">Ma trận đề thi:</div>
+              <div>M1 · Nhận biết — 5 câu × 6đ = 30đ</div>
+              <div>M2 · Thông hiểu — 5 câu × 6đ = 30đ</div>
+              <div>M3 · Vận dụng — 5 câu × 8đ = 40đ</div>
+              <div style="font-weight:700;color:var(--gold);margin-top:4px;">Tổng: 15 câu = 100 điểm</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-content">
+        <div class="step-number">2</div>
+        <h3>Tạo đề thi tự động</h3>
+        <p>
+          Vào tab <strong>"Soạn đề"</strong> → bấm <strong>"🐝 Tạo đề Toán (15 câu)"</strong>.<br><br>
+          Hệ thống rút ngẫu nhiên 15 câu từ ngân hàng 400+ câu, theo đúng ma trận 3 mức.<br><br>
+          Tạo xong Toán → bấm tiếp <strong>"🐝 Tạo đề TV (15 câu)"</strong>.<br><br>
+          Bấm <strong>"👁️ Xem trước đề"</strong> để kiểm tra. Có tab chuyển đổi giữa Toán và Tiếng Việt.
+        </p>
+        <div class="tip">💡 Mỗi lần bấm "Tạo đề" → đề cũ cùng môn bị thay thế. Đề TV không ảnh hưởng khi tạo lại đề Toán.</div>
+      </div>
+    </div>
+
+    <!-- Step 2b: Tạo đề thủ công -->
+    <div class="step">
+      <div class="step-visual">
+        <div class="mock-screen">
+          <div class="mock-toolbar"><div class="mock-dot" style="background:#E74C3C;"></div><div class="mock-dot" style="background:#F39C12;"></div><div class="mock-dot" style="background:#27AE60;"></div></div>
+          <div class="mock-body" style="padding:1.2rem;">
+            <div style="font-weight:700;color:var(--navy);margin-bottom:0.75rem;font-size:0.9rem;">✍️ Soạn câu hỏi thủ công</div>
+            <div style="background:#F7FAFC;padding:8px 10px;border-radius:6px;margin-bottom:6px;font-size:0.75rem;">
+              <div style="color:var(--text-light);margin-bottom:2px;">Môn: <strong>Toán</strong> · Mức: <strong>M2</strong> · Loại: <strong>Trắc nghiệm</strong></div>
+              <div style="font-weight:600;color:var(--navy);">Tìm x biết: x ÷ 4 = 27. Giá trị x = ?</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;font-size:0.72rem;">
+              <div style="background:#E8F5E9;padding:4px 8px;border-radius:4px;border:1px solid var(--success);">✅ A. 108</div>
+              <div style="background:white;padding:4px 8px;border-radius:4px;border:1px solid #E2E8F0;">B. 96</div>
+              <div style="background:white;padding:4px 8px;border-radius:4px;border:1px solid #E2E8F0;">C. 112</div>
+              <div style="background:white;padding:4px 8px;border-radius:4px;border:1px solid #E2E8F0;">D. 84</div>
+            </div>
+            <div style="margin-top:8px;display:flex;gap:6px;">
+              <div style="background:var(--success);color:white;padding:5px 10px;border-radius:4px;font-size:0.72rem;font-weight:600;">✅ Thêm câu hỏi</div>
+              <div style="background:#EBF5FB;padding:5px 10px;border-radius:4px;font-size:0.72rem;color:var(--blue);">📸 Chèn hình ảnh</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-content">
+        <div class="step-number" style="background:linear-gradient(135deg,#2980B9,#5DADE2);color:white;">2+</div>
+        <h3>Tạo đề thủ công (tùy chọn)</h3>
+        <p>
+          Ngoài tạo đề tự động, GV có thể <strong>soạn câu hỏi riêng</strong>:<br><br>
+          Trong tab "Soạn đề" → bấm mở <strong>"✍️ Soạn câu hỏi thủ công"</strong>:<br><br>
+          <strong>Bước 1:</strong> Chọn môn (Toán/TV), mức (M1/M2/M3), loại (Trắc nghiệm/Điền đáp số).<br><br>
+          <strong>Bước 2:</strong> Nhập nội dung câu hỏi. Nếu trắc nghiệm → nhập 4 đáp án A, B, C, D → chọn đáp án đúng.<br><br>
+          <strong>Bước 3:</strong> Bấm <strong>"✅ Thêm câu hỏi"</strong> → câu hỏi xuất hiện trong danh sách.<br><br>
+          Có thể <strong>chèn hình ảnh</strong> minh họa vào câu hỏi bằng nút 📸.
+        </p>
+        <div class="tip">💡 Câu hỏi thủ công và câu tự động cùng nằm chung danh sách. GV có thể kết hợp cả hai.</div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="step">
+      <div class="step-visual">
+        <div class="mock-screen">
+          <div class="mock-toolbar"><div class="mock-dot" style="background:#E74C3C;"></div><div class="mock-dot" style="background:#F39C12;"></div><div class="mock-dot" style="background:#27AE60;"></div></div>
+          <div class="mock-body" style="text-align:center;padding:1.5rem;">
+            <div style="font-size:1.5rem;margin-bottom:0.5rem;">📤</div>
+            <div style="font-weight:700;color:var(--navy);margin-bottom:1rem;">Công bố đề thi</div>
+            <div style="background:#EAFAF1;padding:16px;border-radius:12px;border:2px solid var(--success);margin-bottom:1rem;">
+              <div style="font-size:0.78rem;color:var(--text-light);">Phòng Toán</div>
+              <div style="font-size:1.5rem;font-weight:900;color:var(--navy);letter-spacing:2px;">OLYMPIC-T5861</div>
+              <div style="background:var(--success);color:white;display:inline-block;padding:4px 10px;border-radius:4px;font-size:0.75rem;margin-top:4px;font-weight:700;">📋 Copy</div>
+            </div>
+            <div style="background:#EBF5FB;padding:16px;border-radius:12px;border:2px solid var(--blue);">
+              <div style="font-size:0.78rem;color:var(--text-light);">Phòng Tiếng Việt</div>
+              <div style="font-size:1.5rem;font-weight:900;color:var(--navy);letter-spacing:2px;">OLYMPIC-TV4922</div>
+              <div style="background:var(--blue);color:white;display:inline-block;padding:4px 10px;border-radius:4px;font-size:0.75rem;margin-top:4px;font-weight:700;">📋 Copy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="step-content">
+        <div class="step-number">3</div>
+        <h3>Công bố & Gửi mã cho HS</h3>
+        <p>
+          Về <strong>Trang chủ</strong> → bấm <strong>"📤 Công bố đề"</strong>.<br><br>
+          Hệ thống tạo mã phòng thi:<br>
+          — <strong>OLYMPIC-T####</strong> cho Toán<br>
+          — <strong>OLYMPIC-TV####</strong> cho Tiếng Việt<br><br>
+          <strong>Gửi mã phòng + SBD</strong> cho học sinh qua Zalo, Facebook, Email hoặc đọc trực tiếp tại phòng thi.<br><br>
+          Học sinh truy cập trang thi, nhập mã phòng + SBD → bắt đầu làm bài.
+        </p>
+        <div class="tip">💡 Có thể thi Toán trước, Tiếng Việt sau. Bấm "Công bố thêm TV" khi sẵn sàng.</div>
+      </div>
+    </div>
+
+    <!-- Student flow -->
+    <div style="text-align:center;margin:2rem 0 0;">
+      <div class="section-tag" style="background:#FEF9E7;color:var(--gold);">Phía học sinh</div>
+      <h2 style="font-size:1.6rem;font-weight:800;color:var(--navy);margin:0.75rem 0 1.5rem;">Học sinh làm bài thế nào?</h2>
+    </div>
+    <div style="display:flex;align-items:flex-start;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
+      <div style="text-align:center;flex:1;min-width:140px;max-width:180px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;">1</div>
+        <div style="font-size:0.82rem;color:var(--text);">Truy cập <a href="https://hososoeduvn.github.io/olympictieuhoc/hocsinh.html" style="color:var(--blue);font-weight:600;">link thi</a></div>
+      </div>
+      <div style="font-size:1.5rem;color:var(--gold);margin-top:10px;">→</div>
+      <div style="text-align:center;flex:1;min-width:140px;max-width:180px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;">2</div>
+        <div style="font-size:0.82rem;color:var(--text);">Nhập mã phòng + SBD</div>
+      </div>
+      <div style="font-size:1.5rem;color:var(--gold);margin-top:10px;">→</div>
+      <div style="text-align:center;flex:1;min-width:140px;max-width:180px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;">3</div>
+        <div style="font-size:0.82rem;color:var(--text);">Làm bài 40 phút</div>
+      </div>
+      <div style="font-size:1.5rem;color:var(--gold);margin-top:10px;">→</div>
+      <div style="text-align:center;flex:1;min-width:140px;max-width:180px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--success);color:white;display:flex;align-items:center;justify-content:center;margin:0 auto 8px;font-weight:800;">4</div>
+        <div style="font-size:0.82rem;color:var(--text);">Nộp bài → Xem điểm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="section-title">
+    <div class="section-tag">Câu hỏi thường gặp</div>
+    <h2>Giải đáp thắc mắc</h2>
+  </div>
+
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Đăng ký trên 2 máy khác nhau thì sao? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Mỗi lần đăng ký tạo mã trường (schoolId) riêng → dữ liệu tách thành 2 tài khoản. Nên chỉ đăng ký <strong>1 lần trên 1 máy</strong>, rồi phát mã phòng cho tất cả HS.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">1 SBD có đăng nhập trên 2 máy không? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><strong>Không.</strong> Hệ thống khóa thiết bị: HS001 đăng nhập máy A → máy B nhập HS001 sẽ bị chặn.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">HS chuyển tab khi đang thi thì sao? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Bài thi <strong>nộp ngay lập tức</strong> mà không cảnh báo. Kết quả ghi lý do: "Tự động nộp — chuyển tab". Nên nhắc HS trước khi thi.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Tạo đề lại thì đề cũ có mất không? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Bấm "Tạo đề Toán" → 15 câu Toán cũ <strong>tự động bị thay</strong> bằng 15 câu mới. Đề TV không bị ảnh hưởng.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Nhiều HS thi cùng lúc có bị lỗi? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Không. Hệ thống sử dụng LockService chống ghi đồng thời. 50-100 HS thi cùng lúc hoạt động bình thường.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Muốn hủy cuộc thi và tạo lại? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Bấm <strong>"🔒 Hủy công bố"</strong> → mã phòng thi bị xóa → HS không vào được nữa. Tạo đề mới và công bố lại sẽ nhận mã mới.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Xem kết quả ở đâu? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Tab <strong>"📈 Kết quả"</strong> → bấm "🔄 Tải kết quả mới" → lọc theo mã phòng. Bấm 👁️ để xem chi tiết. Hỗ trợ xuất Excel.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Dùng điện thoại được không? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a"><strong>Trang Giáo viên:</strong> Nên sử dụng <strong>máy tính</strong> để thao tác tốt nhất (tạo đề, quản lý HS, xem kết quả). Trên điện thoại có thể bị hạn chế.<br><br><strong>Trang Học sinh & Tự luyện:</strong> Hoạt động tốt trên cả máy tính và điện thoại. HS có thể thi trên điện thoại bình thường.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div style="padding:0 2rem;">
+  <div class="cta">
+    <h2>Sẵn sàng tổ chức kỳ thi?</h2>
+    <p>Chỉ mất 10 phút để thiết lập hoàn chỉnh</p>
+    <a href="https://hososoeduvn.github.io/olympictieuhoc/" class="btn-hero btn-hero-primary" style="font-size:1.1rem;padding:16px 36px;">🚀 Vào hệ thống ngay</a>
+  </div>
+</div>
+
+<!-- TỰ LUYỆN -->
+<section class="section" style="padding-top:1rem;">
+  <div style="background:linear-gradient(135deg,#1a3a5c,#2d5a8e);border-radius:20px;padding:2.5rem;display:flex;align-items:center;gap:2rem;flex-wrap:wrap;">
+    <div style="flex:1;min-width:280px;">
+      <div style="display:inline-block;background:rgba(212,160,18,0.2);color:#F5C518;padding:4px 12px;border-radius:12px;font-size:0.75rem;font-weight:700;margin-bottom:0.75rem;">🐝 DÀNH CHO HỌC SINH</div>
+      <h2 style="color:white;font-size:1.6rem;font-weight:800;margin-bottom:0.5rem;">Tự luyện Olympic</h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:0.92rem;line-height:1.7;margin-bottom:1rem;">Học sinh tự rèn luyện với hệ thống thi thử, hàng trăm câu hỏi, nhiều vòng thi thử thách. Đăng ký nhận mã → chọn môn → làm bài → xem kết quả ngay!</p>
+      <a href="https://olympictvtoan.github.io/tuluyen/" class="btn-hero btn-hero-primary" style="font-size:0.95rem;">🐝 Vào Tự luyện</a>
+    </div>
+    <div style="flex:0 0 240px;text-align:center;">
+      <div style="background:rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;">
+        <div style="font-size:2.5rem;margin-bottom:0.5rem;">🐝</div>
+        <div style="color:white;font-weight:700;margin-bottom:0.5rem;">400+ câu hỏi</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;">Toán + Tiếng Việt</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;">Vòng thi không giới hạn</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;">≥ 50 điểm → lên vòng mới</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  © 2026 — Thiết kế: Chung Trần — Zalo 0913 031 073
+</div>
+
+</body>
+</html>
